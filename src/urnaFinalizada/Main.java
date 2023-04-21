@@ -9,24 +9,24 @@ public class Main {
         // Criando meu Candidato;
         Candidatos Lula = new Candidatos(
                 "Luiz Inácio Lula da Silva",
-                new ImageIcon("lula.png"),
+                new ImageIcon("img/lula.png"),
                 13,
                 "PARTIDO DOS TRABALHADORES",
-                new ImageIcon("dilma.png"),
+                new ImageIcon("img/dilma.png"),
                 "Dilma Russef");
         Candidatos Ciro = new Candidatos(
                 "Ciro Gomes",
-                new ImageIcon("ciro.png"),
+                new ImageIcon("img/ciro.png"),
                 12,
                 "Patria Amada",
-                new ImageIcon("naldo.png"),
+                new ImageIcon("img/naldo.png"),
                 "Ozzy Osburn");
         Candidatos Wellington = new Candidatos(
                 "Wellington Cheiro",
-                new ImageIcon("well.png"),
+                new ImageIcon("img/well.png"),
                 77,
                 "Petrobrás",
-                new ImageIcon("wellvice.png"),
+                new ImageIcon("img/wellvice.png"),
                 "Banho");
         
         //Adicionando Candidato a lista de Presidenciaveis

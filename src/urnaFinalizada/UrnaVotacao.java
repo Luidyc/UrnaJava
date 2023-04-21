@@ -35,24 +35,24 @@ public class UrnaVotacao extends javax.swing.JFrame {
         // Criando meus candidadatos;
         Lula = new Candidatos(
                 "Luiz Inácio Lula da Silva",
-                new ImageIcon("lula.png"),
+                new ImageIcon("img/lula.png"),
                 13,
                 "PARTIDO DOS TRABALHADORES",
-                new ImageIcon("dilma.png"),
+                new ImageIcon("img/dilma.png"),
                 "Dilma Russef");
         Ciro = new Candidatos(
                 "Ciro Gomes",
-                new ImageIcon("ciro.png"),
+                new ImageIcon("img/ciro.png"),
                 12,
                 "Patria Amada",
-                new ImageIcon("naldo.png"),
+                new ImageIcon("img/naldo.png"),
                 "Ozzy Osburn");
         Wellington = new Candidatos(
                 "Wellington Cheiro",
-                new ImageIcon("well.png"),
+                new ImageIcon("img/well.png"),
                 77,
                 "Petrobrás",
-                new ImageIcon("wellvice.png"),
+                new ImageIcon("img/wellvice.png"),
                 "Banho");
         ///////////////////////////////////////////////////////////////
         //Pasando a lista pra minha eleição///////
@@ -651,7 +651,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
     private void btnBrancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrancoActionPerformed
         // TODO add your handling code here:
         result = "100";
-        lblFotoDoPresidente.setIcon(new ImageIcon("votobranco.png"));
+        lblFotoDoPresidente.setIcon(new ImageIcon("img/votobranco.png"));
         lblNomeDoCandidato.setText("VOTO BRANCO");
         lblNum.setText("");
         if(!"100".equals(result)) {

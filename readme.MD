@@ -1,7 +1,7 @@
 ## Urna
 
 ### Diagrama de Classes
-![alt text](diagrama.png)
+
 ### Conhecimentos aplicados
 - Java Class, Interface, Jframe;
 - Orientação a objetos;
@@ -23,30 +23,27 @@
 
 
 ## Model-Candidato
-```json
-{
-    String nome;
-    ImageIcon imgPresidente;
-    int numeroDoCandidato;
-    String partido;
-    ImageIcon imgVice;
-    String vice;
-    int votosRecebidos;
-}
-```
+
+   - String nome;
+   - ImageIcon imgPresidente;
+   - int numeroDoCandidato;
+   - String partido;
+   - ImageIcon imgVice;
+   - String vice;
+   - int votosRecebidos;
+
 
 ## Business Rules
 - Candidato não pode ser construido igual;
 
 ## Model-Eleicao
 ```json
-{
-    List <Candidatos> listaDeCandidatos;
-    int qtdEleitores;
-    int votoBranco;
-    int votoValido;
-}
-```
+
+   - List <Candidatos> listaDeCandidatos;
+   - int qtdEleitores;
+   - int votoBranco;
+   - int votoValido;
+
 ## Business Rules
 - Não permite informar mais de 2 digitos;
 - Ao cliclar em um candidato Branco é necessário corrigir para votar em outro;
