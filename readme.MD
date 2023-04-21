@@ -2,6 +2,8 @@
 
 ### Diagrama de Classes
 
+![Diagrama](https://user-images.githubusercontent.com/99658182/233529935-3c7b150e-61d7-47d6-8427-41022f8fdec9.png)
+
 ### Conhecimentos aplicados
 - Java Class, Interface, Jframe;
 - Orientação a objetos;
