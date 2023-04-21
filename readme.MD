@@ -37,7 +37,6 @@
 - Candidato não pode ser construido igual;
 
 ## Model-Eleicao
-```json
 
    - List <Candidatos> listaDeCandidatos;
    - int qtdEleitores;
