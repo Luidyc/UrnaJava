@@ -63,9 +63,7 @@ public class Candidatos implements IntCandidatos {
         votosRecebidos++;
     }
  
-    public Candidatos() {
     
-    }
     
     public Candidatos(String nome, ImageIcon imgPresidente, int numeroDoCandidato, String partido,ImageIcon imgVice,String vice) {
         this.nome = nome;

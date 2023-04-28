@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package urnaFinalizada;
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -15,10 +14,20 @@ import javax.swing.ImageIcon;
  */
 public class UrnaVotacao extends javax.swing.JFrame {
     List <Candidatos> ListaDeCandidatos;
+    List<Eleitor> ListaDeVotos;
     Candidatos Lula;
     Candidatos Ciro;
-    Candidatos Wellington;
-    Eleicao Eleicao2023;
+    Candidatos Eymael;
+    Candidatos Felipe;
+    Candidatos Jair;
+    Candidatos LeoPericles;
+    Candidatos Kelmon;
+    Candidatos Simone;
+    Candidatos Sofia;
+    Candidatos Soraya;
+    Candidatos Vera;
+    Eleitor Eleitor;
+    Votacao Votacao;
     
     /**
      * Creates new form UrnaVotacao
@@ -29,39 +38,50 @@ public class UrnaVotacao extends javax.swing.JFrame {
     public UrnaVotacao() {
         initComponents();
         //Criando minha eleição ao iniciar programa;
-        Eleicao2023 = new Eleicao();
+        Votacao = new Votacao();
         // Criando minha lista de Candidatos
         ListaDeCandidatos = new ArrayList();
-        // Criando meus candidadatos;
-        Lula = new Candidatos(
-                "Luiz Inácio Lula da Silva",
-                new ImageIcon("img/lula.png"),
-                13,
-                "PARTIDO DOS TRABALHADORES",
-                new ImageIcon("img/dilma.png"),
-                "Dilma Russef");
-        Ciro = new Candidatos(
-                "Ciro Gomes",
-                new ImageIcon("img/ciro.png"),
-                12,
-                "Patria Amada",
-                new ImageIcon("img/naldo.png"),
-                "Ozzy Osburn");
-        Wellington = new Candidatos(
-                "Wellington Cheiro",
-                new ImageIcon("img/well.png"),
-                77,
-                "Petrobrás",
-                new ImageIcon("img/wellvice.png"),
-                "Banho");
         ///////////////////////////////////////////////////////////////
         //Pasando a lista pra minha eleição///////
-        Eleicao2023.setListaDeCandidatos(ListaDeCandidatos);
+        Votacao.setListaDeCandidatos(ListaDeCandidatos);
+        // Criando meus candidadatos;
+        Lula = new Candidatos("LULA",new ImageIcon("img/lula.png"),13,"Partido dos Trabalhadores",
+                new ImageIcon("img/lulaVice.png"),"GERALDO ALCKMIN");
+        Votacao.addCandidato(Lula);
+        Ciro = new Candidatos("CIRO GOMES",new ImageIcon("img/ciro.png"),12,"Partido Democrático Trabalhista",
+                new ImageIcon("img/ciroVice.png"),"ANA PAULA MATOS");
+        Votacao.addCandidato(Ciro);
+        Eymael = new Candidatos("CONSTITUINTE EYMAEL",new ImageIcon("img/Eymael.png"),27,"Democracia Cristã",
+                new ImageIcon("img/EymaelVice.png"),"Professor Bravo");
+        Votacao.addCandidato(Eymael);
+        Felipe = new Candidatos("FELIPE D'AVILA",new ImageIcon("img/Felipe.png"),30,"Partido Novo",
+                new ImageIcon("img/FelipeVice.png"),"TIAGO MITRAUD");
+        Votacao.addCandidato(Felipe);
+        LeoPericles = new Candidatos("LÉO PÉRICLES",new ImageIcon("img/Leo.png"),80,"Unidade Popular",
+                new ImageIcon("img/LeoVice.png"),"SAMARA MARTINS");
+        Votacao.addCandidato(LeoPericles);
+        Kelmon = new Candidatos("PADRE KELMON",new ImageIcon("img/Kelmon.png"),14,"Partido Trabalhista Brasileiro",
+                new ImageIcon("img/KelmonVice.png"),"PASTOR GAMONAL");
+        Votacao.addCandidato(Kelmon);
+        Sofia = new Candidatos("SOFIA MANZANO",new ImageIcon("img/Sofia.png"),21,"Partido Comunista Brasileiro",
+                new ImageIcon("img/SofiaVice.png"),"ANTONIO ALVES");
+        Votacao.addCandidato(Sofia);
+        Simone = new Candidatos("SIMONE TEBET",new ImageIcon("img/Simone.png"),15,"Movimento Democrático Brasileiro",
+                new ImageIcon("img/SimoneVice.png"),"MARA GABRILLI");
+        Votacao.addCandidato(Simone);
+        Jair = new Candidatos("Constituite Eymael",new ImageIcon("img/Jair.png"),22,"Partido Liberal",
+                new ImageIcon("img/JairVice.png"),"BRAGA NETTO");
+        Votacao.addCandidato(Jair);
+        Soraya = new Candidatos("SORAYA THRONICKE",new ImageIcon("img/Soraya.png"),44,"UNIÃO BRASIL",
+                new ImageIcon("img/SorayaVice.png"),"MARCOS CINTRA");
+        Votacao.addCandidato(Soraya);
+        Vera = new Candidatos("VERA",new ImageIcon("img/Vera.png"),16,"Partido Socialista dos Trabalhadores Unificado",
+                new ImageIcon("img/VeraVice.png"),"RAQUEL AGUIAR SANTOS");
+        Votacao.addCandidato(Vera);
         //////////////Adicionando meus candidatos na lista passada///////////////
-        Eleicao2023.addCandidato(Lula);
-        Eleicao2023.addCandidato(Ciro);
-        Eleicao2023.addCandidato(Wellington);
-        
+        ///////////////Criando minha lista de votos////////////////////////
+        ListaDeVotos = new ArrayList();
+        Votacao.setListaDeVotos(ListaDeVotos);
         
     }
     
@@ -171,55 +191,50 @@ public class UrnaVotacao extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
                         .addComponent(lblPartidoDoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblFotoDoPresidente, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
-                    .addComponent(lblFotoVice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(24, 24, 24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblFotoDoPresidente, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFotoVice, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(793, Short.MAX_VALUE)
+                    .addContainerGap(810, Short.MAX_VALUE)
                     .addComponent(lblFotoPresidente)
                     .addContainerGap()))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(30, 30, 30))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(13, Short.MAX_VALUE)
-                        .addComponent(lblFotoDoPresidente, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                .addGap(25, 25, 25)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(lblNomeDoCandidato))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(lblPartidoDoCandidato))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(lbViceDoCandidato)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblFotoVice, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(16, 16, 16))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(lblPartidoDoCandidato))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(lbViceDoCandidato))
+                .addGap(96, 96, 96))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblFotoDoPresidente, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblFotoVice, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 15, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(lblFotoPresidente)
-                    .addContainerGap(418, Short.MAX_VALUE)))
+                    .addContainerGap(443, Short.MAX_VALUE)))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
@@ -469,10 +484,8 @@ public class UrnaVotacao extends javax.swing.JFrame {
             }
         });
 
-        lblajuda.setIcon(new javax.swing.ImageIcon("C:\\Users\\luidy\\Downloads\\Termine esse\\Termine Esse\\ajuda.png")); // NOI18N
         lblajuda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblI.setIcon(new javax.swing.ImageIcon("C:\\Users\\luidy\\Downloads\\Termine esse\\Termine Esse\\i.png")); // NOI18N
         lblI.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -483,7 +496,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -501,12 +514,12 @@ public class UrnaVotacao extends javax.swing.JFrame {
                                 .addComponent(jLabel16)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(76, 76, 76)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 27, Short.MAX_VALUE))
+                        .addGap(0, 20, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblI)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -521,34 +534,32 @@ public class UrnaVotacao extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(lblajuda, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(lblajuda, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblI)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblI)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -609,25 +620,25 @@ public class UrnaVotacao extends javax.swing.JFrame {
     
     public void exibaCandidato() {
         int i = Integer.parseInt(result);
-            for(int k=0; k<Eleicao2023.listaDeCandidatos.size(); k++) {
-                if(i == Eleicao2023.listaDeCandidatos.get(k).getNumeroDoCandidato()) {
-                    lblNomeDoCandidato.setText(Eleicao2023.listaDeCandidatos.get(k).getNome());
-                    lblFotoDoPresidente.setIcon(Eleicao2023.listaDeCandidatos.get(k).getImgPresidente());
-                    lblPartidoDoCandidato.setText(Eleicao2023.listaDeCandidatos.get(k).getPartido());
-                    lblFotoVice.setIcon(Eleicao2023.listaDeCandidatos.get(k).getImgVice());
-                    lbViceDoCandidato.setText(Eleicao2023.listaDeCandidatos.get(k).getVice());
+            for(int k=0; k<Votacao.listaDeCandidatos.size(); k++) {
+                if(i == Votacao.listaDeCandidatos.get(k).getNumeroDoCandidato()) {
+                    lblNomeDoCandidato.setText(Votacao.listaDeCandidatos.get(k).getNome());
+                    lblFotoDoPresidente.setIcon(Votacao.listaDeCandidatos.get(k).getImgPresidente());
+                    lblPartidoDoCandidato.setText(Votacao.listaDeCandidatos.get(k).getPartido());
+                    lblFotoVice.setIcon(Votacao.listaDeCandidatos.get(k).getImgVice());
+                    lbViceDoCandidato.setText(Votacao.listaDeCandidatos.get(k).getVice());
                 }
           } 
     }
-    public String exibirDados() {
-       String dados = Eleicao2023.exibirDados(ListaDeCandidatos);
-        return dados;
-    }
+    
+    
     
     private void btnConfimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfimaActionPerformed
-        // TODO add your handling code here:
+        // Quando clico em confirmar eu crio meu novo eleitor e pego oque ele digitou na minha váriavel de ambiente;
         int voto = Integer.parseInt(result);
-        Eleicao2023.votosValidos(voto);
+        Eleitor = new Eleitor(voto);
+        // Após isso só confirmando você adiciona um voto cliclando em confirmar
+        Votacao.addVoto(Eleitor);
         lblNum.setText("");
         lblFotoDoPresidente.setIcon(new ImageIcon(""));
         lblNomeDoCandidato.setText("");
@@ -665,11 +676,13 @@ public class UrnaVotacao extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBrancoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ResultadoFrame resultadoFrame = new ResultadoFrame();
-        resultadoFrame.exportarDados(Eleicao2023, ListaDeCandidatos);
-        resultadoFrame.setVisible(true);
+        Votacao.ApurarVoto();
+        ListaDeVotos = new ArrayList();
+        Votacao.setListaDeVotos(ListaDeVotos);
+       
         
-        Eleicao2023.getDados();
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
