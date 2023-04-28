@@ -1,4 +1,4 @@
-## Urna
+## Urna Eletrônica em Java, orientada a objetos.
 
 ### Diagrama de Classes
 
