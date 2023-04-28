@@ -2,7 +2,7 @@
 
 ### Diagrama de Classes
 
-![Diagrama](https://user-images.githubusercontent.com/99658182/233529935-3c7b150e-61d7-47d6-8427-41022f8fdec9.png)
+![Diagrama](https://user-images.githubusercontent.com/99658182/235032339-162a2f69-9ccd-4d3d-89c6-b23ed2230a47.png)
 
 ### Conhecimentos aplicados
 - Java Class, Interface, Jframe;
