@@ -2,7 +2,7 @@
 
 ### Diagrama de Classes
 
-![Diagrama](https://user-images.githubusercontent.com/99658182/235032339-162a2f69-9ccd-4d3d-89c6-b23ed2230a47.png)
+![Diagrama](https://user-images.githubusercontent.com/99658182/235033446-229e566e-45ae-4510-b5a5-41e36bc89808.png)
 
 ### Conhecimentos aplicados
 - Java Class, Interface, Jframe;
@@ -14,14 +14,10 @@
 
 ### Funcionamento
 - Partindo de ponto que os candidatos a votação são previamente cadastrados;
-- Ao iniciar a Urna criei um eleição;
-- Capture o voto ao clicar em confirmar;
+- Ao iniciar a Urna uma sessão de votação que pode ser reiniciada;
+- Capture o voto ao clicar em confirmar na Lista de Eleitores;
 - Verifique se foi um votoValido(Considerar Valido = Candidato, ou Branco);
-- Atribua ao candidato o voto realizado nele;
-- Botão novo abre apuração de Votos;
-### Avisos
-
-    - Main criado somente para testes e desenvolvimento sem implementação de Jframe;
+- Votos brancos foram definidos como uma solução de "Voto=100" já que candidatos podem ter apenas 2 dígitos;
 
 
 ## Model-Candidato
@@ -32,21 +28,29 @@
    - String partido;
    - ImageIcon imgVice;
    - String vice;
-   - int votosRecebidos;
 
 
 ## Business Rules
 - Candidato não pode ser construido igual;
 
-## Model-Eleicao
+## Model-Votação
 
    - List <Candidatos> listaDeCandidatos;
-   - int qtdEleitores;
-   - int votoBranco;
-   - int votoValido;
+   - List <Eleitores> listaDeEleitores;
+
+## Business Rules
+- Cria um novo Eleitor, e o adiciona somente ao confimar voto;
+- Precisa que o candidato seja adicionado a uma lista válida, e após utilizar seu construtor;
+- Apurar votos devolve através do Console em quem cada eleitor votou ao finalizar a lista de Eleitores e criar uma nova (Função do botão Nova).
+
+## Model-Eleitor
+
+   - List <Candidatos> listaDeCandidatos;
+   - List <Eleitores> listaDeEleitores;
 
 ## Business Rules
 - Não permite informar mais de 2 digitos;
 - Ao cliclar em um candidato Branco é necessário corrigir para votar em outro;
+
 
     
