@@ -37,6 +37,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
     
     public UrnaVotacao() {
         initComponents();
+        lblNum.setDocument(new SomenteNumeros());
         //Criando minha eleição ao iniciar programa;
         Votacao = new Votacao();
         // Criando minha lista de Candidatos
@@ -69,7 +70,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         Simone = new Candidatos("SIMONE TEBET",new ImageIcon("img/Simone.png"),15,"Movimento Democrático Brasileiro",
                 new ImageIcon("img/SimoneVice.png"),"MARA GABRILLI");
         Votacao.addCandidato(Simone);
-        Jair = new Candidatos("Constituite Eymael",new ImageIcon("img/Jair.png"),22,"Partido Liberal",
+        Jair = new Candidatos("JAIR BOLSONARO",new ImageIcon("img/Jair.png"),22,"Partido Liberal",
                 new ImageIcon("img/JairVice.png"),"BRAGA NETTO");
         Votacao.addCandidato(Jair);
         Soraya = new Candidatos("SORAYA THRONICKE",new ImageIcon("img/Soraya.png"),44,"UNIÃO BRASIL",
@@ -126,8 +127,12 @@ public class UrnaVotacao extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        lblajuda = new javax.swing.JLabel();
         lblI = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -143,6 +148,12 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
         lblFotoPresidente.setBackground(new java.awt.Color(153, 255, 255));
         lblFotoPresidente.setForeground(new java.awt.Color(153, 153, 255));
+
+        lblNum.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                lblNumKeyPressed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setText("Número:");
@@ -174,7 +185,6 @@ public class UrnaVotacao extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
@@ -187,10 +197,12 @@ public class UrnaVotacao extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lbViceDoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblPartidoDoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel2)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addGap(18, 18, 18)
+                            .addComponent(lblPartidoDoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblFotoDoPresidente, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,7 +217,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(67, 67, 67)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -484,9 +496,20 @@ public class UrnaVotacao extends javax.swing.JFrame {
             }
         });
 
-        lblajuda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         lblI.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\luidy\\Downloads\\UrnaFinalizada\\Urna\\img\\ajuda.png")); // NOI18N
+        jLabel3.setToolTipText("");
+
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\luidy\\Downloads\\UrnaFinalizada\\Urna\\img\\i.png")); // NOI18N
+
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel17.setText("JUSTIÇA");
+
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel18.setText("ELEITORAL");
+
+        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\luidy\\Downloads\\brasao.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -495,6 +518,14 @@ public class UrnaVotacao extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblI)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel1)))
+                        .addContainerGap(782, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -517,38 +548,41 @@ public class UrnaVotacao extends javax.swing.JFrame {
                                 .addGap(76, 76, 76)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 20, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblI)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblajuda)))
-                .addContainerGap())
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(2, 2, 2))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(23, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblI)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(lblajuda, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel18)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblI)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel20)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -610,7 +644,6 @@ public class UrnaVotacao extends javax.swing.JFrame {
     }//GEN-LAST:event_btn0ActionPerformed
     String result = "";
     public void Botao(String valorDoBtn) {
-       
        if (result.length() < 2) {
            result = lblNum.getText() + valorDoBtn;
            lblNum.setText(result);
@@ -634,8 +667,11 @@ public class UrnaVotacao extends javax.swing.JFrame {
     
     
     private void btnConfimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfimaActionPerformed
-        // Quando clico em confirmar eu crio meu novo eleitor e pego oque ele digitou na minha váriavel de ambiente;
+        if(result.isEmpty()) {
+            return;
+        }
         int voto = Integer.parseInt(result);
+        // Quando clico em confirmar eu crio meu novo eleitor e pego oque ele digitou na minha váriavel de ambiente;
         Eleitor = new Eleitor(voto);
         // Após isso só confirmando você adiciona um voto cliclando em confirmar
         Votacao.addVoto(Eleitor);
@@ -679,11 +715,14 @@ public class UrnaVotacao extends javax.swing.JFrame {
         Votacao.ApurarVoto();
         ListaDeVotos = new ArrayList();
         Votacao.setListaDeVotos(ListaDeVotos);
-       
-        
-        
-        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void lblNumKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblNumKeyPressed
+        lblNum.setText("");
+        if(lblNum.getText().length() >= 2){
+            lblNum.setText("");
+        }
+    }//GEN-LAST:event_lblNumKeyPressed
 
     /**
      * @param args the command line arguments
@@ -737,12 +776,17 @@ public class UrnaVotacao extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -759,6 +803,5 @@ public class UrnaVotacao extends javax.swing.JFrame {
     private javax.swing.JLabel lblNomeDoCandidato;
     private javax.swing.JTextField lblNum;
     private javax.swing.JLabel lblPartidoDoCandidato;
-    private javax.swing.JLabel lblajuda;
     // End of variables declaration//GEN-END:variables
 }

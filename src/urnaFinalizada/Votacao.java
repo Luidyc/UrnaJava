@@ -44,17 +44,22 @@ public class Votacao implements IntVotacao{
     
     @Override
     public void ApurarVoto() {
+        int votoValido = 0;
+        System.out.println("Votação encerrada começando uma nova!");
         for(int i=0; i < listaDeVotos.size(); i++) {
             if (listaDeVotos.get(i).getVotoRecebido() == 100) {
-                    System.out.println("Vc deu um voto pro Lulinha");
+                    votoValido++;
+                    System.out.println("O eleitor "+(i+1)+" votou em Branco");
                 } else {
                     for(int k=0; k<listaDeCandidatos.size(); k++) {
                     if(listaDeVotos.get(i).getVotoRecebido() == listaDeCandidatos.get(k).getNumeroDoCandidato()) {
+                    votoValido++;
                     System.out.println("O eleitor "+(i+1)+" votou em "+listaDeCandidatos.get(k).getNome());
                 }
                 }
             
             } 
-        }   
+        }
+        System.out.println("Votos nulos = "+(listaDeVotos.size()-votoValido));
     }
 }
